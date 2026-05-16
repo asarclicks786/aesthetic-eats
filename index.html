@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Culinary Heritage | Premium Recipes & History</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .serif-font { font-family: 'Playfair Display', serif; }
+        .recipe-card-hidden { display: none; }
+    </style>
+</head>
+<body class="bg-[#FAF8F5] text-[#2C2520]">
+    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-[#EFEAE2]">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="serif-font text-2xl font-bold tracking-wide text-[#7C4A34]">Aesthetic<span class="text-[#D46A43]">Eats.</span></a>
+            <div class="flex items-center gap-4">
+                <label for="country-select" class="text-xs font-bold uppercase tracking-wider text-[#A38F85]">Explore Heritage:</label>
+                <select id="country-select" onchange="filterCountry()" class="bg-[#FAF8F5] border border-[#DDD3C5] text-[#2C2520] font-semibold text-sm px-4 py-2 rounded-xl focus:outline-none focus:border-[#D46A43] cursor-pointer">
+                    <option value="pakistan">🇵🇰 Pakistan</option>
+                    <option value="thailand">🇹🇭 Thailand</option>
+                </select>
+            </div>
+        </div>
+    </header>
+    <section class="max-w-7xl mx-auto px-6 pt-12 pb-6 text-center">
+        <span class="text-xs font-bold tracking-widest text-[#D46A43] uppercase bg-[#F5ECE1] px-3 py-1 rounded-full">The World's Elite Kitchen Museum</span>
+        <h1 class="serif-font text-4xl md:text-6xl font-black text-[#3D281E] mt-3 mb-4 leading-tight">Taste the History, Master the Art</h1>
+        <p class="text-[#706055] max-w-2xl mx-auto text-sm md:text-base">Explore authentic global cuisines, trace their fascinating imperial origins, learn secret master chef methodologies, and download premium printable recipe sheets.</p>
+    </section>
+    <main class="max-w-6xl mx-auto px-6 py-8">
+        <div id="section-pakistan" class="country-section space-y-12">
+            <h2 class="serif-font text-3xl font-bold text-[#3D281E] border-b-2 border-[#D46A43] pb-2">🇵🇰 Pakistani Culinary Heritage</h2>
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-[#EFEAE2] grid md:grid-cols-2 gap-8" id="pdf-pk-app">
+                <div>
+                    <span class="text-xs font-bold text-[#D46A43] uppercase tracking-widest">COURSE 01: APPETIZER</span>
+                    <h3 class="serif-font text-3xl font-bold text-[#3D281E] my-2">Shahi Silk Shami Kebab</h3>
+                    <p class="text-xs text-[#A38F85] font-semibold mb-4">⏱️ TIME: 60 Mins | 👨‍🍳 INVENTOR: Nawab's Royal Chefs | 📍 ORIGIN: Awadh, Old India</p>
+                    <div class="bg-[#FAF8F5] p-4 rounded-2xl border-l-4 border-[#D46A43] mb-4">
+                        <h4 class="font-bold text-xs uppercase text-[#7C4A34] mb-1">📜 History & Chronicle</h4>
+                        <p class="text-xs text-[#55473E] italic">"Yeh Kebab Awadh ke aik boht hi bimar aur boht barri umer ke Nawab ke liye un ke shahi bawarchiyoon ne ijad kiye thay. Nawab ke dant nahi thay magar unhain gosht khane ka boht shauq tha, is liye gosht aur dalon ko itna peesa gaya ke woh munh me jaate hi makkhan ki tarah ghul jayein."</p>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <h4 class="font-bold text-sm text-[#3D281E] mb-2">📋 Ingredients & Process</h4>
+                        <p class="text-xs text-[#55473E] leading-relaxed mb-4"><strong>Ingredients:</strong> Beef/Mutton 1kg, Chana Dal 250g, Whole Red Chillies, Garam Masala, Fresh Mint, Coriander.<br><strong>Process:</strong> Gosht aur dal ko kharray masalon ke sath boil karein jab tak pani khushk na ho jaye. Isay chopper me nihayat bareeq pees lein. Chop ki hui sabz mirch, podina aur piyaz mila kar kebabs ki shape dein aur fry karein.</p>
+                    </div>
+                    <button onclick="downloadPDF('pdf-pk-app', 'Shami-Kebab-Recipe')" class="w-full bg-[#7C4A34] hover:bg-[#D46A43] text-white font-semibold text-xs py-3 rounded-xl transition shadow-md uppercase tracking-wider mt-4">📥 Download Shami Kebab PDF</button>
+                </div>
+            </div>
+        </div>
+        <div id="section-thailand" class="country-section space-y-12 recipe-card-hidden">
+            <h2 class="serif-font text-3xl font-bold text-[#3D281E] border-b-2 border-[#D46A43] pb-2">🇹🇭 Thailand Royal Culinary Arts</h2>
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-[#EFEAE2] grid md:grid-cols-2 gap-8" id="pdf-th-main">
+                <div>
+                    <span class="text-xs font-bold text-[#D46A43] uppercase tracking-widest">COURSE 02: MAIN COURSE</span>
+                    <h3 class="serif-font text-3xl font-bold text-[#3D281E] my-2">Tom Yum Goong (Thai Shrimp Soup)</h3>
+                    <p class="text-xs text-[#A38F85] font-semibold mb-4">⏱️ TIME: 30 Mins | 👨‍🍳 INVENTOR: Chao Phraya River Fishermen | 📍 ORIGIN: Central Thailand</p>
+                    <div class="bg-[#FAF8F5] p-4 rounded-2xl border-l-4 border-[#D46A43] mb-4">
+                        <h4 class="font-bold text-xs uppercase text-[#7C4A34] mb-1">📜 History & Chronicle</h4>
+                        <p class="text-xs text-[#55473E] italic">"Chao Phraya darya ke mwahay (fishermen) fresh jheengay pakarhte thay. Unho ne darya ke kinare ugne wali jade-bootiyan jese Lemongrass aur Galangal ko mila kar ye soup ubala taake thand aur beemariyon se bacha ja sakay."</p>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <h4 class="font-bold text-sm text-[#3D281E] mb-2">📋 Ingredients & Process</h4>
+                        <p class="text-xs text-[#55473E] leading-relaxed mb-4"><strong>Ingredients:</strong> Medium Shrimps 400g, Shrimp Stock 4 cups, Lemongrass, Galangal, Kaffir Lime Leaves, Thai Bird's Eye Chillies, Mushrooms, Fish Sauce, Lime Juice.<br><strong>Process:</strong> Shrimp stock me lemongrass, galangal aur kaffir lime leaves daal kar ubalen. Mushrooms, chilies aur jheengay daal kar 3 mins pakhayein. Fish sauce aur lime juice dalen.</p>
+                    </div>
+                    <button onclick="downloadPDF('pdf-th-main', 'Tom-Yum-Goong')" class="w-full bg-[#7C4A34] hover:bg-[#D46A43] text-white font-semibold text-xs py-3 rounded-xl transition shadow-md uppercase tracking-wider mt-4">📥 Download Tom Yum PDF</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-[#3D281E] text-[#C2B4AA] text-center py-8 mt-20">
+        <p class="serif-font text-xl text-white font-bold mb-2">Aesthetic Eats Culinary Archive</p>
+    </footer>
+    <script>
+        function filterCountry() {
+            const selected = document.getElementById('country-select').value;
+            const sections = document.querySelectorAll('.country-section');
+            sections.forEach(sec => {
+                if (sec.id === 'section-' + selected) { sec.style.display = 'block'; }
+                else { sec.style.display = 'none'; }
+            });
+        }
+        function downloadPDF(elementId, fileName) {
+            const element = document.getElementById(elementId);
+            const opt = {
+                margin: [0.4, 0.4, 0.4, 0.4],
+                filename: fileName + '.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2.5, useCORS: true },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
+</body>
+  </html>
+          
